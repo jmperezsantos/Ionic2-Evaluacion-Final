@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Comentarios</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let comment of comments">
+      <ion-item>
+        <img item-left src="http://placeimg.com/50/50/tech">
+        <h2>
+          <b>{{comment.movieName}}</b>
+        </h2>
+        <h4>{{comment.title}}</h4>
+        <h6>{{comment.comment}}</h6>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="secondary" (click)="edit(comment)">
+          <ion-icon name="create"></ion-icon>
+        </button>
+
+        <button ion-button color="danger" (click)="delete(comment)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+
+</ion-content>
